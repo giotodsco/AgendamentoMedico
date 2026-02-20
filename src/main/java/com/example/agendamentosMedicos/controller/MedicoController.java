@@ -29,4 +29,11 @@ public class MedicoController {
     public ResponseEntity<List<MedicoResponseEspecialidadeDTO>> procurarEspecialidade(@PathVariable Especialidade especialidade){
         return ResponseEntity.ok(service.listarPerEspecialidade(especialidade));
     }
+
+    @GetMapping
+    public ResponseEntity<List<MedicoResponseDTO>> listar(){
+        return ResponseEntity.ok(service.listarMedicos());
+    }
+
+
 }
