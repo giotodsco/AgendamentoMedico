@@ -22,6 +22,8 @@ public class Medico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String name;
+
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 
