@@ -1,5 +1,6 @@
 package com.example.agendamentosMedicos.model;
 
+import com.example.agendamentosMedicos.dto.request.MedicoRequestDTO;
 import com.example.agendamentosMedicos.enums.Especialidade;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -32,4 +33,11 @@ public class Medico {
 
     @OneToMany(mappedBy = "medico")
     private List<Consulta> consultasListMedico = new ArrayList<>();
+
+    public Medico(MedicoRequestDTO requestDTO){
+        //String name, Especialidade especialidade, String crm
+        this.name = requestDTO.name();
+        this.especialidade = requestDTO.especialidade();
+        this.crm = requestDTO.crm();
+    }
 }
