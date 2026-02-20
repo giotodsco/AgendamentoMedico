@@ -32,4 +32,10 @@ public class MedicoService {
                 .toList();
     }
 
+    public List<MedicoResponseDTO> listarMedicos(){
+        return repository.findAll().stream()
+                .map(MedicoResponseDTO::new)
+                .toList();
+    }
+
 }
