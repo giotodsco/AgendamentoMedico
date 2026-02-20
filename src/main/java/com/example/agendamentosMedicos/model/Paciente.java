@@ -1,5 +1,6 @@
 package com.example.agendamentosMedicos.model;
 
+import com.example.agendamentosMedicos.dto.request.PacienteRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,5 +32,11 @@ public class Paciente {
 
     @OneToMany(mappedBy = "paciente")
     private List<Consulta> consultasListPacient = new ArrayList<>();
+
+    public Paciente(PacienteRequestDTO requestDTO){
+        this.name = requestDTO.name();
+        this.document = requestDTO.document();
+        this.idade = requestDTO.idade();
+    }
 
 }
