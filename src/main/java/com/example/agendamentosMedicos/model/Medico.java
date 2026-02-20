@@ -32,6 +32,9 @@ public class Medico {
     private String crm;
 
     @OneToMany(mappedBy = "medico")
+    private List<HorariosMedico> horariosMedicos = new ArrayList<>();
+
+    @OneToMany(mappedBy = "medico")
     private List<Consulta> consultasListMedico = new ArrayList<>();
 
     public Medico(MedicoRequestDTO requestDTO){
