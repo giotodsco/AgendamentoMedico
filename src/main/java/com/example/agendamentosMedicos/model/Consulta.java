@@ -28,17 +28,14 @@ public class Consulta {
     @JoinColumn(name = "medico_id")
     private Medico medico;
 
-    private String data;
-
-    private String horario;
+    private HorariosMedico horariosMedico;
 
     private StatusConsulta statusConsulta;
 
-    public Consulta(Paciente paciente, Medico medico, String data, String horario){
+    public Consulta(Paciente paciente, Medico medico, HorariosMedico horariosMedico){
         this.paciente = paciente;
         this.medico = medico;
-        this.data = data;
-        this.horario = horario;
+        this.horariosMedico = horariosMedico;
         this.statusConsulta = StatusConsulta.AGENDADO;
     }
 }
