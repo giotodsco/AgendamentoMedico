@@ -5,5 +5,5 @@ import com.example.agendamentosMedicos.model.Medico;
 import com.example.agendamentosMedicos.model.Paciente;
 import jakarta.persistence.*;
 
-public record ConsultaRequestDTO(Long idPaciente, Long idMedico, String data, String horario) {
+public record ConsultaRequestDTO(Long idPaciente, Long idMedico, Long idHorario) {
 }

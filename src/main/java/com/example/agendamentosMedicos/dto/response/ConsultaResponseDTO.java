@@ -11,8 +11,8 @@ public record ConsultaResponseDTO(Long id, String namePaciente, String nameMedic
                 consulta.getId(),
                 consulta.getPaciente().getName(),
                 consulta.getMedico().getName(),
-                consulta.getData(),
-                consulta.getHorario(),
+                consulta.getHorariosMedico().getData(),
+                consulta.getHorariosMedico().getHorario(),
                 consulta.getStatusConsulta()
         );
 
