@@ -27,8 +27,8 @@ public class ConsultaService {
     private MedicoRepository medicoRepository;
 
     public ConsultaResponseDTO createConsulta(Long idPaciente, Long idMedico, Long idHorario){
-        Paciente pacienteId = repositoryPaciente.getById(idPaciente);
-        Medico medicoId = medicoRepository.getById(idMedico);
+        Paciente pacienteId = repositoryPaciente.findById(idPaciente).orElseThrow(() -> new RuntimeException("Nenhum paciente"));
+        Medico medicoId = medicoRepository.findById(idMedico).orElseThrow(() -> new RuntimeException("Nenhum horario"));
         HorariosMedico horariosMedico = medicoHorarioRepository.findById(idHorario).orElseThrow(() -> new RuntimeException("Nenhum horario"));
 
         Consulta consulta = new Consulta(pacienteId, medicoId, horariosMedico);
