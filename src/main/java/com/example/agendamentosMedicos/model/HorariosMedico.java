@@ -25,7 +25,7 @@ public class HorariosMedico {
 
     private String horario;
 
-    private boolean isDisponivel = true;
+    private boolean isDisponivel;
 
     @ManyToOne
     @JoinColumn(name = "medico_id")
